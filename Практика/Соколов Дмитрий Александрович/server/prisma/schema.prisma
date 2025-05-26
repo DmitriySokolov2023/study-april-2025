@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  email           String            @unique
+  password        String
+  fullName        String
+  role            Role
+  class           Class?            @relation("ClassStudents", fields: [classId], references: [id])
+  classId         Int?
+  classLed        Class[]           @relation("ClassTeacher")
+  teacherSubjects TeacherSubject[]
+  schedules       Schedule[]        @relation("TeacherSchedule")
+  children        ParentsStudents[] @relation("ParentRelation")
+  parents         ParentsStudents[] @relation("StudentRelation")
+  createdAt       DateTime          @default(now())
+}
+
+model Class {
+  id             Int        @id @default(autoincrement())
+  name           String
+  students       User[]     @relation("ClassStudents")
+  schedules      Schedule[]
+  classTeacher   User?      @relation("ClassTeacher", fields: [classTeacherId], references: [id])
+  classTeacherId Int?
+}
+
+model Subject {
+  id        Int              @id @default(autoincrement())
+  name      String
+  teachers  TeacherSubject[]
+  schedules Schedule[]
+}
+
+model TeacherSubject {
+  id        Int     @id @default(autoincrement())
+  teacher   User    @relation(fields: [teacherId], references: [id])
+  subject   Subject @relation(fields: [subjectId], references: [id])
+  teacherId Int
+  subjectId Int
+
+  @@unique([teacherId, subjectId])
+}
+
+model Schedule {
+  id        Int     @id @default(autoincrement())
+  dayOfWeek Int
+  timeStart String
+  timeEnd   String
+  subject   Subject @relation(fields: [subjectId], references: [id])
+  teacher   User    @relation("TeacherSchedule", fields: [teacherId], references: [id])
+  class     Class   @relation(fields: [classId], references: [id])
+
+  subjectId Int
+  teacherId Int
+  classId   Int
+}
+
+model ParentsStudents {
+  id        Int  @id @default(autoincrement())
+  parent    User @relation("ParentRelation", fields: [parentId], references: [id])
+  student   User @relation("StudentRelation", fields: [studentId], references: [id])
+  parentId  Int
+  studentId Int
+
+  @@unique([parentId, studentId])
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  TEACHER
+  STUDENT
+  PARENT
+}
