@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clients>
+    <client>
+        <id>1</id>
+        <name>Иван Иванов</name>
+        <phone>89011234567</phone>
+        <email>ivanov@example.com</email>
+    </client>
+    <client>
+        <id>2</id>
+        <name>Мария Петрова</name>
+        <phone>89017654321</phone>
+        <email>maria@example.com</email>
+    </client>
+    <client>
+        <id>3</id>
+        <name>Алексей Смирнов</name>
+        <phone>89013456789</phone>
+        <email>alexey@example.com</email>
+    </client>
+    <client>
+        <id>4</id>
+        <name>Светлана Кузнецова</name>
+        <phone>89014567890</phone>
+        <email>svetlana@example.com</email>
+    </client>
+    <client>
+        <id>5</id>
+        <name>Дмитрий Орлов</name>
+        <phone>89015789234</phone>
+        <email>dmitriy@example.com</email>
+    </client>
+</clients>

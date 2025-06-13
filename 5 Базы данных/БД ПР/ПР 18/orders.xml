@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+    <order>
+        <id>1</id>
+        <client_id>1</client_id>
+        <car_id>2</car_id>
+        <date>2024-11-01</date>
+        <duration>3</duration>
+    </order>
+    <order>
+        <id>2</id>
+        <client_id>2</client_id>
+        <car_id>1</car_id>
+        <date>2024-11-05</date>
+        <duration>5</duration>
+    </order>
+    <order>
+        <id>3</id>
+        <client_id>3</client_id>
+        <car_id>3</car_id>
+        <date>2024-11-10</date>
+        <duration>7</duration>
+    </order>
+    <order>
+        <id>4</id>
+        <client_id>4</client_id>
+        <car_id>5</car_id>
+        <date>2024-11-12</date>
+        <duration>2</duration>
+    </order>
+    <order>
+        <id>5</id>
+        <client_id>5</client_id>
+        <car_id>4</car_id>
+        <date>2024-11-15</date>
+        <duration>4</duration>
+    </order>
+</orders>

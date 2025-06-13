@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cars>
+    <car>
+        <id>1</id>
+        <brand>Volkswagen</brand>
+        <model>Golf</model>
+        <year>2019</year>
+        <price>1200</price>
+    </car>
+    <car>
+        <id>2</id>
+        <brand>BMW</brand>
+        <model>3 Series</model>
+        <year>2021</year>
+        <price>2000</price>
+    </car>
+    <car>
+        <id>3</id>
+        <brand>Audi</brand>
+        <model>A4</model>
+        <year>2020</year>
+        <price>1500</price>
+    </car>
+    <car>
+        <id>4</id>
+        <brand>Mercedes-Benz</brand>
+        <model>C-Class</model>
+        <year>2022</year>
+        <price>2500</price>
+    </car>
+    <car>
+        <id>5</id>
+        <brand>Skoda</brand>
+        <model>Octavia</model>
+        <year>2018</year>
+        <price>1100</price>
+    </car>
+</cars>
